@@ -1,10 +1,14 @@
 import * as path from "path";
 import * as webpack from 'webpack';
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const config: webpack.Configuration = {
     mode: 'production',
-    entry: path.resolve(__dirname, 'src', 'index.ts'),
+    entry: path.resolve(__dirname, 'src', 'index.tsx'),
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[contenthash].js',
