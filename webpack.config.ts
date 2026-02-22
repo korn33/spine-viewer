@@ -6,8 +6,20 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const isDev = process.env.NODE_ENV !== 'production'
+
 const config: webpack.Configuration = {
-    mode: 'production',
+    mode: isDev ? 'development' : 'production',
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
+        },
+    },
+    devtool: isDev ? 'source-map' : false,
+    performance: {
+        maxAssetSize: 2000000,
+        maxEntrypointSize: 2000000,
+    },
     entry: path.resolve(__dirname, 'src', 'index.tsx'),
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -27,6 +39,12 @@ const config: webpack.Configuration = {
     },
     module: {
         rules: [
+            {
+                test: /\.m?js$/,
+                resolve: {
+                    fullySpecified: false,
+                },
+            },
             {
                 test: /\.tsx?$/,
                 use: 'ts-loader',
