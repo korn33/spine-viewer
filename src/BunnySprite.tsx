@@ -32,7 +32,7 @@ export function BunnySprite() {
             x = {200}
             y = {200}
             scale = {isSmall ? 1 : 2}
-            onClick = {changeScale}
+            onPointerTap = {changeScale}
         />
     )
 }
