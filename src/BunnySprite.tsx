@@ -30,7 +30,7 @@ export function BunnySprite() {
             anchor = {0.5}
             texture={texture}
             x = {200}
-            y = {200}
+            y = {400}
             scale = {isSmall ? 3 : 6}
             onPointerTap = {changeScale}
         />
