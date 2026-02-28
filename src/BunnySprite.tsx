@@ -29,9 +29,9 @@ export function BunnySprite() {
             eventMode = {'static'}
             anchor = {0.5}
             texture={texture}
-            x = {200}
+            x = {400}
             y = {200}
-            scale = {isSmall ? 1 : 2}
+            scale = {isSmall ? 3 : 6}
             onPointerTap = {changeScale}
         />
     )
