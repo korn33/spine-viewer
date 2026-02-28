@@ -6,7 +6,7 @@
     "build:prod:local": "webpack --env mode=production target=local",
     "build:dev:local": "webpack --env mode=development target=local",
     "serve": "webpack serve --env target=local",
-    "deploy": "npm run build:prod && gh-pages -d dist"
+    "deploy": "node deploy.mjs"
   },
   "homepage": "https://korn33.github.io/spine-viewer/",
   "keywords": [],
