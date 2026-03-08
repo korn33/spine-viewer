@@ -1,0 +1,25 @@
+.appContainer {
+  display: flex;
+  height: 100vh; /* на всю высоту окна */
+  width: 100vw;  /* на всю ширину окна */
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* чтобы не было скролла, если контент выходит */
+}
+
+.viewerSection {
+  flex: 1; /* занимает всё доступное пространство */
+  background-color: #3a3838; /* темный фон для пиксельного вьюпорта */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.controlSection {
+  width: 300px; /* фиксированная ширина панели управления */
+  background-color: #8acc8a;
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* если кнопок будет много - появится скролл */
+}
