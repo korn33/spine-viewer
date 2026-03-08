@@ -1,5 +1,6 @@
 import {useEffect, useRef, useState} from "react";
 import {Assets, Texture} from "pixi.js";
+import spriteBunnyImg from '../assets/images/spriteBunny.png'
 
 export function BunnySprite() {
     const spriteRef = useRef(null)
@@ -10,7 +11,7 @@ export function BunnySprite() {
     useEffect(() => {
         if (texture === Texture.EMPTY) {
             Assets
-                .load('https://pixijs.com/assets/bunny.png')
+                .load(spriteBunnyImg)
                 .then((result) => {
                     setTexture(result)
                 });

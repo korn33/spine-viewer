@@ -53,7 +53,14 @@ export default (env: BuildEnv): webpack.Configuration => {
                     test: /\.tsx?$/,
                     use: 'ts-loader',
                     exclude: /node_modules/,
-                }
+                },
+                {
+                    test: /\.(png|jpe?g|gif|svg|webp)$/i,
+                    type: 'asset/resource',
+                    generator: {
+                        filename: 'assets/images/[hash]__[name][ext]'
+                    }
+                },
             ]
         },
         devServer: isDev ? {
