@@ -2,7 +2,7 @@ import {Application, extend} from "@pixi/react";
 import {Container, Graphics, Sprite} from "pixi.js";
 import {ControlPanel} from "../ControlPanel/ControlPanel";
 import styles from './App.module.scss';
-import {useState} from "react";
+import {useRef, useState} from "react";
 import {AppConfig} from "../AppConfig";
 import {Scene} from "../Pixi/Scene";
 extend({
@@ -18,10 +18,12 @@ export default function App() {
         setCanvasColor(newColor);
     };
 
+    const containerRef = useRef<HTMLDivElement | null>(null);
+
     return (
         <div className={styles.appContainer}>
-            <div className={styles.viewerSection}>
-                <Application>
+            <div ref={containerRef} className={styles.viewerSection}>
+                <Application resizeTo={containerRef} resolution={window.devicePixelRatio}>
                     <Scene backgroundColor={canvasColor}/>
                 </Application>
             </div>
