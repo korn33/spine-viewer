@@ -1,3 +1,28 @@
+/* Широкий экран / горизонталь */
+@media (min-aspect-ratio: 1/1) {
+  .appContainer {
+    flex-direction: row;
+  }
+
+  .controlSection {
+    width: 30vw;
+    max-width: 400px; /* ограничение максимальной ширины */
+  }
+}
+
+/* Узкий экран / вертикаль */
+@media (max-aspect-ratio: 1/1) {
+  .appContainer {
+    flex-direction: column;
+  }
+
+  .controlSection {
+    width: 100%;
+    height: 30vh;
+    min-height: 200px;
+  }
+}
+
 .appContainer {
   display: flex;
   height: 100vh; /* на всю высоту окна */
@@ -17,9 +42,8 @@
 }
 
 .controlSection {
-  width: 300px; /* фиксированная ширина панели управления */
   background-color: #8acc8a;
   padding: 20px;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  //box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
   overflow-y: auto; /* если кнопок будет много - появится скролл */
 }

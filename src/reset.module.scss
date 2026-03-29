@@ -1,0 +1,47 @@
+/* reset.module.scss - полный сброс */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Убираем стандартные стили у списков */
+ul, ol {
+  list-style: none;
+}
+
+/* Убираем подчеркивание у ссылок */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Базовые настройки для изображений */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Убираем стандартные кнопочные стили */
+button {
+  //background: none;
+  //border: none;
+  cursor: pointer;
+  //font-family: inherit;
+}
